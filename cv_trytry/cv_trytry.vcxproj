@@ -24,6 +24,7 @@
     <ProjectGuid>{8c171e68-ca92-4382-95aa-c2bd584eaef7}</ProjectGuid>
     <RootNamespace>cvtrytry</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>snakeGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
