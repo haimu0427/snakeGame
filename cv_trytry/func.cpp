@@ -38,7 +38,8 @@ void BGM() {
 //游戏初始化
 void GameInit()
 {
-
+	startTime = time(nullptr); // 记录游戏开始时间
+	score = 0; // 初始化分数
 
 	//初始化蛇
 	snake.length = 3;
@@ -188,6 +189,7 @@ void EatFood()
 	{
 		// 蛇吃到食物
 		snake.length++;// 蛇的长度增加
+		score += 10; // 每次吃到食物增加10分
 		food.is_eaten = true;// 食物被吃掉
 		
 	}
@@ -199,6 +201,7 @@ void CheckCollision()
 	if (snake.body[0].x < 0 || snake.body[0].x >= 640 || snake.body[0].y < 0 || snake.body[0].y >= 480)
 	{
 		MessageBox(GetHWnd(), _T("游戏结束,蛇撞到了边界"), _T("游戏结束"), MB_OK);
+		ShowGameResult();
 		exit(0);
 	}
 	//检测蛇头是否碰到自己的身体
@@ -207,7 +210,21 @@ void CheckCollision()
 		if (snake.body[0].x == snake.body[i].x && snake.body[0].y == snake.body[i].y)
 		{
 			MessageBox(GetHWnd(), _T("游戏结束,蛇撞到了自己"), _T("游戏结束"), MB_OK);
+			ShowGameResult();
 			exit(0);
 		}
 	}
+}
+void ShowGameResult()  
+{  
+   endTime = time(nullptr); // 记录游戏结束时间  
+   double duration = difftime(endTime, startTime); // 计算游戏时长  
+
+   // 构造结果字符串  
+   std::wstring result = L"游戏结束！\n";  
+   result += L"分数: " + std::to_wstring(score) + L"\n";  
+   result += L"时间: " + std::to_wstring(duration) + L" 秒";  
+
+   // 弹出窗口显示结果  
+   MessageBox(NULL, result.c_str(), L"游戏结果", MB_OK);  
 }

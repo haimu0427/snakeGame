@@ -1,6 +1,8 @@
 #include "head.h"
 struct Snake snake;
 struct Food food;
+int score = 0;
+time_t startTime, endTime;
 
 int main()
 {
@@ -25,6 +27,7 @@ int main()
 		CheckCollision();
 
 		if (GetAsyncKeyState(VK_ESCAPE)) {
+			ShowGameResult(); // 显示游戏结果
 			break;
 		}
 	}

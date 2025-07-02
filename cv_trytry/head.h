@@ -7,11 +7,20 @@
 #include <Windows.h>
 #include <Mmsystem.h>
 #pragma comment(lib, "winmm.lib")
+
+#include <ctime> // 用于记录时间
+#include <string> // 用于字符串操作
+
 //宏定义
 #define SnakeLength 200
 #define SnakeWidth 10
 #define SPEED 100
 
+
+extern int score; // 游戏分数
+extern time_t startTime, endTime; // 游戏开始和结束时间
+
+//定义方向枚举
 enum orint
 {
 	//四个方向
@@ -56,4 +65,5 @@ void SnakeMove();
 void CreateFood();
 void EatFood();
 void CheckCollision();
+void ShowGameResult();
 
