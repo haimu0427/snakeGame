@@ -1,0 +1,26 @@
+////主角
+////设置我的主角
+//static int x = 100, y = 100;
+//setfillcolor(GREEN);
+//solidcircle(x, y, 10);
+////键盘消息 , 操作主角
+//if (GetAsyncKeyState(VK_UP))
+//{
+//	y -= 4;
+//}
+//if (GetAsyncKeyState(VK_DOWN))
+//{
+//	y += 4;
+//}
+//if (GetAsyncKeyState(VK_LEFT))
+//{
+//	x -= 4;
+//}
+//if (GetAsyncKeyState(VK_RIGHT))
+//{
+//	x += 4;
+//}
+//if (GetAsyncKeyState(VK_ESCAPE))
+//{
+//	break;
+//}
