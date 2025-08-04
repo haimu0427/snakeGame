@@ -180,8 +180,6 @@ void CreateFood()
 		}
 	}
 }
-
-
 //吃食物
 void EatFood()
 {
@@ -194,6 +192,7 @@ void EatFood()
 		
 	}
 }
+
 //碰撞检验
 void CheckCollision()
 {
@@ -215,6 +214,8 @@ void CheckCollision()
 		}
 	}
 }
+
+//游戏结束积分显示
 void ShowGameResult()  
 {  
    endTime = time(nullptr); // 记录游戏结束时间  
